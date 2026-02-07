@@ -1,0 +1,11 @@
+server:
+  port: !!int 9090
+  api_prefix: !!str /api/base4go
+api_mapping:
+  v1/hello: consul://Greeter/SayHello
+  v1/echo: consul://Greeter/Echo
+registry:
+  addr: 127.0.0.1:8500
+warm_server:
+  grpc:
+    - consul://Greeter

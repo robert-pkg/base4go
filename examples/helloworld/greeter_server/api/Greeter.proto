@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package = "github.com/robert-pkg/base4go/examples/helloworld/greeter_server/api";
+
+package api;
+
+
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (SayHelloRequest) returns (SayHelloReply) {}
+}
+
+message SayHelloRequest {
+  string name = 1;
+}
+
+message SayHelloReplyData {
+  string message = 1;
+}
+
+message SayHelloReply {
+  int32 code = 1;
+  string msg = 2;
+  SayHelloReplyData data = 3;
+}
